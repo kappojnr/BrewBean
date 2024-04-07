@@ -14,11 +14,15 @@
 
 html{
    font-size: 62.5%;
+   overflow-x: hidden;
+   scroll-behavior: smooth;
+   
 }
 
 body{
    color: #444;
    font-family: 'Lora', serif;
+   overflow-x: hidden;
 }
 
 /* RE-USBABLE ELEMENTS */
@@ -99,6 +103,7 @@ body{
     background-color: #160d0a;
 
     /* we want header to be sticky later */
+    position: relative;
     height: 9.6rem;
     padding: 0  4.8rem;
 }
@@ -108,6 +113,23 @@ body{
     font-size: 2rem;
     text-decoration:none;
     color: #fff;
+
+    
+}
+/***********************
+  STICKY */
+/**************************/
+.sticky{
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  width: 100%;
+  height: 8rem;
+  padding-top: 0;
+  padding-bottom: 0;
+  background-color:rgba(22, 13, 10, 0.97);
+  z-index: 999;
+  box-shadow: 0 1.2rem 3.2rem rgba(0, 0, 0, 0.03);
 }
 /************************/
 /*NAVIGATION*/
@@ -125,6 +147,26 @@ body{
   font-size: 1.8rem;
   font-weight: 500;
   transition: all 0.3s;
+}
+/************************/
+/*MOBILE-NAV*/
+/************************/
+.btn-mobile-nav{
+  border: none;
+  background: none;
+  cursor: pointer;
+
+  display: none;
+}
+
+.icon-mobile-nav{
+  font-size: 3.2rem;
+  color: #fff;
+}
+
+
+.icon-mobile-nav[name="close-outline"]{
+  display: none;
 }
 /************************/
 /*HERO-SECTION*/
@@ -314,4 +356,161 @@ body{
 /* MEDIA QUERIES*/
 /************************/
 /************************/
-\
+/* rem and em do not depend on html font-size
+in media queries! Instead,1rem = 1em = 16px */
+
+/***********************/
+/* BELOW 1344px (Smaller desktops) */
+/***********************/
+@media(max-width:84em){
+
+  .hero{
+    max-width: 120rem;
+  }
+}
+
+/***********************/
+/* BELOW 1200px (Landscape tablets) */
+/***********************/
+@media(max-width:75em){
+
+  html{
+  /* 9px /16px  */
+  font-size:56.25% ;
+}
+.header{
+  padding: 0 3.2rem;
+}
+}
+
+/***********************/
+/* BELOW 992px(Tablets) */
+/***********************/
+
+
+@media(max-width:62em){
+  html{
+      font-size: 50%;
+  }
+  .logos img{
+    height: 2.4rem;
+  }
+  .hero{
+  grid-template-columns: 1fr;
+  gap: 4.8rem;
+  }
+  .hero-img{
+    width: 100%;
+    /* border-radius: 50px; */
+  }
+  .about{
+    grid-template-columns: 1fr;
+  }
+  .about-img{
+    width: 80%;
+} 
+} 
+
+/***********************/
+/* BELOW 752px(Tablets) */
+/***********************/
+@media(max-width:47em){
+  .section-hero{
+    padding: 3.2rem 8rem;
+  }
+  .grid--footer {
+    grid-template-columns: repeat(6,1fr);
+  }
+.nav-col{
+    grid-row: 1;
+    grid-column: span 2;
+    margin-bottom: 3.2rem;
+}
+.logo-col,.address-col{
+    grid-column: span 3;
+}
+/*MOBILE NAVIGATION*/
+.btn-mobile-nav{
+  display: block;
+  z-index: 999;
+}
+.navigation{
+  background-color:
+   rgba(22, 13, 10, 0.97);
+  position:absolute ;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 50vh;
+  transform: translateX(100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.5s ease-in;
+
+/* hide the navigation */
+        /* allow no transistion */
+        /* display:none */
+
+        /* 1.hide it visually */
+        opacity: 0;
+
+        /*2.make unacessable it mouse and keyboard */
+        pointer-events: none;
+
+        /* Hide from screen readers */
+        visibility: hidden;
+      }
+       .nav-open .navigation{
+        opacity: 1;
+        pointer-events: auto;
+        visibility: visible;
+        transform: translateX(0);
+      }
+
+      .nav-open .icon-mobile-nav[name="close-outline"]{
+        display: block;
+      }
+
+      .nav-open .icon-mobile-nav[name="menu-outline"]{
+        display: none;
+      }
+
+      .nav-list{
+        flex-direction: column;
+        gap: 2.4rem;
+      }
+      .nav-link:link,
+      .nav-link:visited {
+        font-size: 3rem;
+      }
+/***********************/
+/* BELOW 544px(Mobile phones) */
+/***********************/
+
+@media(max-width:34em){
+  .section-hero{
+    padding: 3.2rem 4.8rem;
+  }
+  .hero-description{
+    font-size: 5.6rem;
+  }
+  .btn,
+  .btn:link,
+  .btn:visited{
+    padding: 1.6rem 1.6rem ;
+  }
+  .logos img{
+    height: 1.2rem;
+  }
+  
+}
+
+/***********************/
+/* BELOW 448px(Smaller mobile phones) */
+/***********************/
+@media(max-width:28em){
+  .hero-description{
+    font-size: 4.8rem;
+  }
+}

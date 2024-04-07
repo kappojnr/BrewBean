@@ -13,7 +13,8 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
      integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
       crossorigin="anonymous" referrerpolicy="no-referrer" />
-</head>
+    <script defer src="script.js"></script>
+    </head>
 <body>
     <header class="header">
         <a href="#" class="logo" >
@@ -21,12 +22,16 @@
         </a>
         <nav class="navigation">
             <ul class="nav-list">
-                <li><a href="#" class="nav-link">Home</a></li>
-                <li><a href="#" class="nav-link">About</a></li>
+                <li><a href="#section-hero" class="nav-link">Home</a></li>
+                <li><a href="#section-about" class="nav-link">About</a></li>
                 <li><a href="#" class="nav-link">Menu</a></li>
                 <li><a href="#" class="nav-link">Suscription</a></li>
             </ul>
         </nav>
+        <button class="btn-mobile-nav">
+            <i class="fa-solid fa-bars nav-open icon-mobile-nav" name="menu-outline"></i>
+            <i class="fa-solid fa-xmark icon-mobile-nav" name="close-outline"></i>
+        </button>
     </header>
     <section class="section-hero">
         <div class="hero">
@@ -41,7 +46,7 @@
                 Start your day with a perfect cup of joe or explore our specialty brews.
                 Join us on this caffeinated journey and experience the true art of coffee.
             </p>
-            <a href="#" class="btn btn--hero">Explore more</a>
+            <a href="#footer" class="btn btn--hero">Explore more</a>
         </div>
             <img src="Images/cofee-img.jpg" alt="a picture of a cofee" class="hero-img">
             <div class="social-icons">
@@ -80,7 +85,7 @@
     <section class="section-about">
         <div class="container">
             <span class="sub-heading about-subheading">about us</span>
-            <div class="grid grid--2-cols">
+            <div class="grid grid--2-cols about">
 
                 <div class="about-us-text">
                     BrewBean offers a variety of features to enhance your coffee experience! 
